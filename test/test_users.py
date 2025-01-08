@@ -1,6 +1,6 @@
 import pytest
 
-from pygrocy2.data_models.user import User
+from pygrocytoo.data_models.user import User
 
 
 class TestUsers:

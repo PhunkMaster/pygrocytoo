@@ -2,9 +2,9 @@ from datetime import datetime
 
 import pytest
 
-from pygrocy2.data_models.chore import AssignmentType, Chore, PeriodType
-from pygrocy2.data_models.user import User
-from pygrocy2.errors import GrocyError
+from pygrocytoo.data_models.chore import AssignmentType, Chore, PeriodType
+from pygrocytoo.data_models.user import User
+from pygrocytoo.errors import GrocyError
 
 
 class TestChores:

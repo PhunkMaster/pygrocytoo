@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from pygrocy2.base import DataModel
-from pygrocy2.grocy_api_client import (
+from pygrocytoo.base import DataModel
+from pygrocytoo.grocy_api_client import (
     CurrentStockResponse,
     GrocyApiClient,
     LocationData,

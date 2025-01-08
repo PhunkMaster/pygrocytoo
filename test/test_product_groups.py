@@ -1,7 +1,7 @@
 import pytest
 
-from pygrocy2.data_models.product import Group
-from pygrocy2.errors import GrocyError
+from pygrocytoo.data_models.product import Group
+from pygrocytoo.errors import GrocyError
 
 
 class TestProductGroups:

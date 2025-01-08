@@ -18,7 +18,7 @@
 Import the package:
 
 ```python
-from pygrocy2 import Grocy
+from pygrocytoo import Grocy
 ```
 
 Obtain a grocy instance:

@@ -1,4 +1,4 @@
-from pygrocy2.grocy_api_client import GrocyApiClient
+from pygrocytoo.grocy_api_client import GrocyApiClient
 
 
 class TestGrocyApiClient:
