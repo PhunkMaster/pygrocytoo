@@ -100,3 +100,8 @@ pygrocy.egg-info/
 
 .tox/
 .coverage
+/pygrocytoo.egg-info/dependency_links.txt
+/pygrocytoo.egg-info/PKG-INFO
+/pygrocytoo.egg-info/requires.txt
+/pygrocytoo.egg-info/SOURCES.txt
+/pygrocytoo.egg-info/top_level.txt
