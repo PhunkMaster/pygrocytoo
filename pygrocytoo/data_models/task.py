@@ -1,8 +1,8 @@
 from datetime import datetime
 
-from pygrocy2.base import DataModel
-from pygrocy2.data_models.user import User
-from pygrocy2.grocy_api_client import TaskCategoryDto, TaskResponse
+from pygrocytoo.base import DataModel
+from pygrocytoo.data_models.user import User
+from pygrocytoo.grocy_api_client import TaskCategoryDto, TaskResponse
 
 
 class TaskCategory(DataModel):

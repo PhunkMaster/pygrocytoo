@@ -111,7 +111,7 @@ class ChoreData(BaseModel):
     assignment_type: str | None = None
     assignment_config: str | None = None
     next_execution_assigned_to_user_id: int | None = None
-    userfields: dict | None
+    userfields: dict | None = None
 
     next_execution_assigned_to_user_id_validator = _field_not_empty_validator(
         "next_execution_assigned_to_user_id"
@@ -563,8 +563,8 @@ class GrocyApiClient(object):
         )
 
         if parsed_json:
-            stockLog = [StockLogResponse(**response) for response in parsed_json]
-            return stockLog[0]
+            stock_log = [StockLogResponse(**response) for response in parsed_json]
+            return stock_log[0]
         return None
 
     def add_product_by_barcode(
@@ -590,8 +590,8 @@ class GrocyApiClient(object):
         )
 
         if parsed_json:
-            stockLog = [StockLogResponse(**response) for response in parsed_json]
-            return stockLog[0]
+            stock_log = [StockLogResponse(**response) for response in parsed_json]
+            return stock_log[0]
         return None
 
     def consume_product_by_barcode(
@@ -608,8 +608,8 @@ class GrocyApiClient(object):
         )
 
         if parsed_json:
-            stockLog = [StockLogResponse(**response) for response in parsed_json]
-            return stockLog[0]
+            stock_log = [StockLogResponse(**response) for response in parsed_json]
+            return stock_log[0]
         return None
 
     def inventory_product_by_barcode(
@@ -640,8 +640,8 @@ class GrocyApiClient(object):
         )
 
         if parsed_json:
-            stockLog = [StockLogResponse(**response) for response in parsed_json]
-            return stockLog[0]
+            stock_log = [StockLogResponse(**response) for response in parsed_json]
+            return stock_log[0]
         return None
 
     def get_shopping_list(

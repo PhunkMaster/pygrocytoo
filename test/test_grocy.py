@@ -1,16 +1,16 @@
 import json
 from datetime import datetime
-from test.test_const import CONST_BASE_URL, CONST_PORT, CONST_SSL
 from unittest import TestCase
 from unittest.mock import mock_open, patch
 
 import pytest
 import responses
 
-from pygrocy2 import Grocy
-from pygrocy2.data_models.product import Product
-from pygrocy2.errors import GrocyError
-from pygrocy2.grocy_api_client import GrocyApiClient
+from pygrocytoo.data_models.product import Product
+from pygrocytoo.errors import GrocyError
+from pygrocytoo.grocy import Grocy
+from pygrocytoo.grocy_api_client import GrocyApiClient
+from test.test_const import CONST_BASE_URL, CONST_PORT, CONST_SSL
 
 
 class TestGrocy(TestCase):
@@ -290,22 +290,22 @@ class TestGrocy(TestCase):
 
     @pytest.mark.vcr
     def test_inventory_product_by_barcode_valid(self):
-        currentInv = int(self.grocy.product_by_barcode("42141099").available_amount)
-        newAmount = currentInv + 10
+        current_inv = int(self.grocy.product_by_barcode("42141099").available_amount)
+        new_amount = current_inv + 10
 
         product = self.grocy.inventory_product_by_barcode(
-            "42141099", newAmount, self.date_test, 1, 150, True
+            "42141099", new_amount, self.date_test, 1, 150, True
         )
 
         assert product.id == 4
         assert product.name == "Crisps"
-        assert product.available_amount == newAmount
+        assert product.available_amount == new_amount
 
     @pytest.mark.vcr
     def test_inventory_product_by_barcode_error(self):
         with pytest.raises(GrocyError) as exc_info:
-            currentInv = int(self.grocy.product_by_barcode("42141099").available_amount)
-            self.grocy.inventory_product(4, currentInv, self.date_test, 1, 150, True)
+            current_inv = int(self.grocy.product_by_barcode("42141099").available_amount)
+            self.grocy.inventory_product(4, current_inv, self.date_test, 1, 150, True)
 
         error = exc_info.value
         assert error.status_code == 400

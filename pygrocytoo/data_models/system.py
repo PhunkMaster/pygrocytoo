@@ -1,7 +1,7 @@
 from datetime import date, datetime
 
-from pygrocy2.base import DataModel
-from pygrocy2.grocy_api_client import SystemConfigDto, SystemInfoDto, SystemTimeDto
+from pygrocytoo.base import DataModel
+from pygrocytoo.grocy_api_client import SystemConfigDto, SystemInfoDto, SystemTimeDto
 
 
 class SystemInfo(DataModel):

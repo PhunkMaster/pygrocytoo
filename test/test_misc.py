@@ -1,5 +1,5 @@
-from pygrocy2.data_models.product import ProductBarcode
-from pygrocy2.grocy_api_client import ProductBarcodeData
+from pygrocytoo.data_models.product import ProductBarcode
+from pygrocytoo.grocy_api_client import ProductBarcodeData
 
 
 class TestMisc:
@@ -8,7 +8,7 @@ class TestMisc:
         data = ProductBarcodeData(**parsed_data)
 
         barcode = ProductBarcode(data)
-        result = barcode.toJson()
+        result = barcode.to_json()
 
         assert result is not None
         assert "barcode" in result

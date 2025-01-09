@@ -1,7 +1,7 @@
 import pytest
 
-from pygrocy2.data_models.generic import EntityType
-from pygrocy2.errors import GrocyError
+from pygrocytoo.data_models.generic import EntityType
+from pygrocytoo.errors import GrocyError
 
 
 class TestGeneric:
@@ -70,7 +70,7 @@ class TestGeneric:
 
     @pytest.mark.vcr
     def test_get_generic_objects_for_type_filters_invalid(
-        self, grocy, invalid_query_filter
+            self, grocy, invalid_query_filter
     ):
         with pytest.raises(GrocyError) as exc_info:
             grocy.get_generic_objects_for_type(

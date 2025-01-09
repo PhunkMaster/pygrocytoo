@@ -9,7 +9,7 @@ def get_val(obj):
 
 
 class DataModel(object):
-    def toJson(self):
+    def to_json(self):
         return json.dumps(self.as_dict())
 
     def as_dict(self):
