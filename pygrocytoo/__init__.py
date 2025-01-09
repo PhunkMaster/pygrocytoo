@@ -1,3 +1,3 @@
-"""The pygrocy2 module."""
+"""The pygrocytoo module."""
 
-name = "pygrocy2"
+name = "pygrocytoo"

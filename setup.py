@@ -4,13 +4,13 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pygrocy2",
-    version="2.3.3",
-    author="Flipper",
+    name="pygrocytoo",
+    version="0.0.0",
+    author="PhunkMaster",
     description="",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/flipper/pygrocy2",
+    url="https://github.com/phunkmaster/pygrocytoo",
     license="MIT",
     packages=setuptools.find_packages(),
     install_requires=[

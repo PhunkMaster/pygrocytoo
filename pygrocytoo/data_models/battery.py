@@ -15,15 +15,15 @@ class Battery(DataModel):
         self._next_estimated_charge_time = response.next_estimated_charge_time
 
         if isinstance(response, CurrentBatteryResponse):
-            self._init_from_CurrentBatteryResponse(response)
+            self._init_from_current_battery_response(response)
         elif isinstance(response, BatteryDetailsResponse):
-            self._init_from_BatteryDetailsResponse(response)
+            self._init_from_battery_details_response(response)
 
-    def _init_from_CurrentBatteryResponse(self, response: CurrentBatteryResponse):
+    def _init_from_current_battery_response(self, response: CurrentBatteryResponse):
         self._id = response.id
         self._last_tracked_time = response.last_tracked_time
 
-    def _init_from_BatteryDetailsResponse(self, response: BatteryDetailsResponse):
+    def _init_from_battery_details_response(self, response: BatteryDetailsResponse):
         self._charge_cycles_count = response.charge_cycles_count
         self._last_charged = response.last_charged
         self._last_tracked_time = response.last_charged  # For compatibility
@@ -48,7 +48,7 @@ class Battery(DataModel):
 
     def get_details(self, api_client: GrocyApiClient):
         details = api_client.get_battery(self._id)
-        self._init_from_BatteryDetailsResponse(details)
+        self._init_from_battery_details_response(details)
 
     @property
     def id(self) -> int:

@@ -5,5 +5,5 @@ jobs:
     name: runner / black formatter
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: rickstaa/action-black@v1
+      - uses: actions/checkout@v4.2.2
+      - uses: rickstaa/action-black@v1.3.3

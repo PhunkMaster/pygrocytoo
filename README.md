@@ -1,24 +1,24 @@
-# pygrocy2
+# pygrocytoo
 
-[![Development Build Status](https://api.travis-ci.com/SebRut/pygrocy.svg?branch=develop)](https://travis-ci.com/SebRut/pygrocy)
-[![PyPI](https://img.shields.io/pypi/v/pygrocy.svg)](https://pypi.org/project/pygrocy/)
-![Python Version](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-blue)
+[![PyPI](https://img.shields.io/pypi/v/pygrocytoo.svg)](https://pypi.org/project/pygrocytoo/)
+![Python Version](https://img.shields.io/badge/python-3.12-blue)
 ![Grocy Version](https://img.shields.io/badge/grocy-3.1.0-yellow)
-[![Coverage Status](https://coveralls.io/repos/github/SebRut/pygrocy/badge.svg?branch=master)](https://coveralls.io/github/SebRut/pygrocy?branch=master)
-[![CodeFactor](https://www.codefactor.io/repository/github/sebrut/pygrocy/badge)](https://www.codefactor.io/repository/github/sebrut/pygrocy)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![Coverage Status](https://coveralls.io/repos/github/phunkmaster/pygrocytoo/badge.svg?branch=main)](https://coveralls.io/github/phunkmaster/pygrocytoo?branch=main)
+[![CodeFactor](https://www.codefactor.io/repository/github/phunkmaster/pygrocytoo/badge)](https://www.codefactor.io/repository/github/phunkmaster/pygrocytoo)
+
+[//]: # ([![pre-commit]&#40;https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&#41;]&#40;https://github.com/pre-commit/pre-commit&#41;)
 [Documentation](https://sebrut.github.io/pygrocy/)
 
 ## Installation
 
-`pip install pygrocy2`
+`pip install pygrocytoo`
 
 ## Usage
 
 Import the package:
 
 ```python
-from pygrocytoo import Grocy
+from pygrocytoo.grocy import Grocy
 ```
 
 Obtain a grocy instance:
@@ -46,4 +46,4 @@ If you need help using pygrocy check the [discussions](https://github.com/flippe
 
 ## Development testing
 
-You need tox and Python 3.13 to run the tests. Navigate to the root dir of `pygrocy2` and execute `tox` to run the tests.
+You need tox and Python 3.13 to run the tests. Navigate to the root dir of `pygrocytoo` and execute `tox` to run the tests.

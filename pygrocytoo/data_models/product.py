@@ -57,15 +57,15 @@ class Product(DataModel):
     def __init__(self, data):
         self._init_empty()
         if isinstance(data, CurrentStockResponse):
-            self._init_from_CurrentStockResponse(data)
+            self._init_from_current_stock_response(data)
         elif isinstance(data, MissingProductResponse):
-            self._init_from_MissingProductResponse(data)
+            self._init_from_missing_product_response(data)
         elif isinstance(data, ProductDetailsResponse):
-            self._init_from_ProductDetailsResponse(data)
+            self._init_from_product_details_response(data)
         elif isinstance(data, ProductData):
-            self._init_from_ProductData(data)
+            self._init_from_product_data(data)
         elif isinstance(data, StockLogResponse):
-            self._init_from_StockLogResponse(data)
+            self._init_from_stock_log_response(data)
 
     def _init_empty(self):
         self._name = None
@@ -85,7 +85,7 @@ class Product(DataModel):
         self._barcodes = []
         self._product_group_id = None
 
-    def _init_from_CurrentStockResponse(self, response: CurrentStockResponse):
+    def _init_from_current_stock_response(self, response: CurrentStockResponse):
         self._id = response.product_id
         self._available_amount = response.amount
         self._amount_aggregated = response.amount_aggregated
@@ -95,15 +95,15 @@ class Product(DataModel):
         self._best_before_date = response.best_before_date
 
         if response.product:
-            self._init_from_ProductData(response.product)
+            self._init_from_product_data(response.product)
 
-    def _init_from_MissingProductResponse(self, response: MissingProductResponse):
+    def _init_from_missing_product_response(self, response: MissingProductResponse):
         self._id = response.id
         self._name = response.name
         self._amount_missing = response.amount_missing
         self._is_partly_in_stock = response.is_partly_in_stock
 
-    def _init_from_ProductDetailsResponse(self, response: ProductDetailsResponse):
+    def _init_from_product_details_response(self, response: ProductDetailsResponse):
         self._available_amount = response.stock_amount
         self._best_before_date = response.next_best_before_date
         self._barcodes = [ProductBarcode(data) for data in response.barcodes]
@@ -112,14 +112,14 @@ class Product(DataModel):
         )
 
         if response.product:
-            self._init_from_ProductData(response.product)
+            self._init_from_product_data(response.product)
 
-    def _init_from_ProductData(self, product: ProductData):
+    def _init_from_product_data(self, product: ProductData):
         self._id = product.id
         self._product_group_id = product.product_group_id
         self._name = product.name
 
-    def _init_from_StockLogResponse(self, response: StockLogResponse):
+    def _init_from_stock_log_response(self, response: StockLogResponse):
         self._id = response.product_id
 
     def get_details(self, api_client: GrocyApiClient):

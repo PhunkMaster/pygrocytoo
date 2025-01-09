@@ -1,24 +1,39 @@
+name: Create Release
+
 on:
   push:
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
-name: Create Release
-
 jobs:
   build:
     name: Create Release
     runs-on: ubuntu-latest
+    env:
+      GROCY_ROOT_DIR: "${{ github.workspace }}"
     steps:
       - name: Checkout code
-        uses: actions/checkout@master
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        uses: actions/checkout@v4.2.2
+
+      - name: Create Release Branch
+        uses: peterjgrainger/action-create-branch@v3.0.0
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+         branch: "refs/heads/release/${{ github.ref_name }}"
+
+      - name: Set release version number in files
+        run: |
+          sed -i '/VERSION = /c\VERSION = "${{ github.ref_name }}"' "${{ env.GROCY_ROOT_DIR }}/setup.py"
+
+      - name: Add Grocy folder to zip archive
+        run: |
+          cd "${{ env.GROCY_ROOT_DIR }}"
+          zip grocytoo.zip -r ./
+
+      - name: Upload release Access
+        uses: softprops/action-gh-release@v2.2.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: grocytoo.zip
           draft: false
           prerelease: false

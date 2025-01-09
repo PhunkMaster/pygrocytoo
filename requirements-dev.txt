@@ -1,9 +1,15 @@
 responses~=0.21.0
 pre-commit
 isort
-pytest
+pytest~=8.3.4
 pytest-cov
 vcrpy
 pytest-recording
 pytest-mock
 urllib3==2.2.3
+setuptools~=75.6.0
+requests~=2.32.3
+deprecation~=2.1.0
+typing~=3.7.4.3
+pydantic~=2.10
+tzdata
