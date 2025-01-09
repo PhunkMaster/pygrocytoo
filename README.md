@@ -1,8 +1,8 @@
 # pygrocytoo
 
 [![PyPI](https://img.shields.io/pypi/v/pygrocytoo.svg)](https://pypi.org/project/pygrocytoo/)
-![Python Version](https://img.shields.io/badge/python-3.12-blue)
-![Grocy Version](https://img.shields.io/badge/grocy-3.1.0-yellow)
+![Python Version](https://img.shields.io/badge/python-3.13-blue)
+![Grocy Version](https://img.shields.io/badge/grocy-4.3.0-yellow)
 [![Coverage Status](https://coveralls.io/repos/github/phunkmaster/pygrocytoo/badge.svg?branch=main)](https://coveralls.io/github/phunkmaster/pygrocytoo?branch=main)
 [![CodeFactor](https://www.codefactor.io/repository/github/phunkmaster/pygrocytoo/badge)](https://www.codefactor.io/repository/github/phunkmaster/pygrocytoo)
 
