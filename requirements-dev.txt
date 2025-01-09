@@ -13,3 +13,5 @@ deprecation~=2.1.0
 typing~=3.7.4.3
 pydantic~=2.10
 tzdata
+tox
+pytest

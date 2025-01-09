@@ -1,6 +1,5 @@
-from datetime import datetime
-
 import zoneinfo
+from datetime import datetime
 
 import pygrocytoo.utils as utils
 
@@ -66,7 +65,7 @@ class TestUtils:
         localized_datetime = utils.localize_datetime(date)
 
         assert localized_datetime == datetime(
-            2022, 7, 10, 21, 17, 34, 633809, tzinfo=zoneinfo.ZoneInfo("America/Chicago")
+            2022, 7, 10, 21, 17, 34, 633809, tzinfo=zoneinfo.ZoneInfo("localtime")
         )
 
     def test_localize_datetime_input_timezone_aware(self):

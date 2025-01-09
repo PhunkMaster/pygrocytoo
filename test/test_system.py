@@ -1,6 +1,7 @@
 from datetime import date, datetime
 
 import pytest
+
 from pygrocytoo.data_models.system import SystemConfig, SystemInfo, SystemTime
 
 

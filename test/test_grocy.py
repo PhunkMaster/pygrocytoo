@@ -1,16 +1,16 @@
 import json
 from datetime import datetime
-from test.test_const import CONST_BASE_URL, CONST_PORT, CONST_SSL
 from unittest import TestCase
 from unittest.mock import mock_open, patch
 
 import pytest
 import responses
 
-from pygrocytoo.grocy import Grocy
 from pygrocytoo.data_models.product import Product
 from pygrocytoo.errors import GrocyError
+from pygrocytoo.grocy import Grocy
 from pygrocytoo.grocy_api_client import GrocyApiClient
+from test.test_const import CONST_BASE_URL, CONST_PORT, CONST_SSL
 
 
 class TestGrocy(TestCase):
