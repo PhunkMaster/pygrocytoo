@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GROCY_ROOT_DIR: "${{ github.workspace }}"
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4.2.2
@@ -19,6 +20,7 @@ jobs:
         uses: peterjgrainger/action-create-branch@v3.0.0
         with:
          branch: "refs/heads/release/${{ github.ref_name }}"
+
 
       - name: Set release version number in files
         run: |
