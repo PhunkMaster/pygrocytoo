@@ -16,7 +16,7 @@ setuptools.setup(
     install_requires=[
         "requests",
         "deprecation~=2.1.0",
-        "pydantic~=2.10.4",
+        "pydantic~=2.11",
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
