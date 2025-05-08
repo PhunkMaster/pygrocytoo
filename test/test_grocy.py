@@ -304,7 +304,9 @@ class TestGrocy(TestCase):
     @pytest.mark.vcr
     def test_inventory_product_by_barcode_error(self):
         with pytest.raises(GrocyError) as exc_info:
-            current_inv = int(self.grocy.product_by_barcode("42141099").available_amount)
+            current_inv = int(
+                self.grocy.product_by_barcode("42141099").available_amount
+            )
             self.grocy.inventory_product(4, current_inv, self.date_test, 1, 150, True)
 
         error = exc_info.value
